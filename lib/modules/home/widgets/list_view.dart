@@ -9,19 +9,15 @@ import 'package:brilliant/shared/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 
-List<String> popular = [
-  'popular1',
-  'popular2',
-  'popular1',
-];
 
 List<String> services = [
-  'it Services',
-  'Smart Home',
-  'Marketing',
-  'Call Center',
-  'Shipping',
+  translator.translate('it Services'),
+  translator.translate('Smart Home'),
+  translator.translate('Marketing'),
+  translator.translate('Call Center'),
+  translator.translate('Shipping'),
 ];
 
 List<Widget> servicesOnTap = [
@@ -32,9 +28,64 @@ List<Widget> servicesOnTap = [
   const ShippingView(),
 ];
 
+
+List<String> popular = [
+  'popular1',
+  'popular2',
+  'popular3',
+  'popular4',
+];
+
+
+List<String> popularHeader = [
+  'Security Cameras',
+  'Marketing',
+  'Smart Home',
+  'Call Center',
+];
+
+List<String> popularBody = [
+  'Recommended Service.',
+  'Full advertising & Promotion process.',
+  'Brilliant is one of the world\'s largest home automation.',
+  'comprehensive development of the communication.',
+];
+
+
+List<Widget> popularOnTap = [
+  ServiceDetails(
+    image: 'security_cam_popular',
+    serviceName: popularHeader[0],
+    serviceInfo: 'The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',
+    serviceDetails: 'Here, we\'re over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
+
+  ),
+  ServiceDetails(
+    image: 'marketing_popular',
+    serviceName: popularHeader[1],
+    serviceInfo: 'The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',
+    serviceDetails: 'Here, we\'re over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
+
+  ),
+  ServiceDetails(
+    image: 'smart_home_popular',
+    serviceName: popularHeader[2],
+    serviceInfo: 'The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',
+    serviceDetails: 'Here, we\'re over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
+
+  ),
+  ServiceDetails(
+    image: 'call_center_popular',
+    serviceName: popularHeader[3],
+    serviceInfo: 'The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',
+    serviceDetails: 'Here, we\'re over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
+
+  ),
+];
+
 Widget buildListServicesItems() {
   return SizedBox(
-    height: 7.h,
+    height: 6.h,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: services.length,
@@ -125,22 +176,26 @@ Widget buildListPopularItems() {
     height: 43.h,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemCount: 3,
+      itemCount: popular.length,
       itemBuilder: (context, index) {
-        return popularItemsList(context, index);
+        return popularItemsList(
+          context,
+          index,
+          onTap: (){
+            Get.to(
+              () => popularOnTap[index],
+              transition: Transition.rightToLeftWithFade,
+            );
+          }
+        );
       },
     ),
   );
 }
 
-Widget popularItemsList(BuildContext context, index) {
+Widget popularItemsList(BuildContext context, index,{required GestureTapCallback onTap}) {
   return GestureDetector(
-    onTap: () {
-      Get.to(
-        () => const ServiceDetails(),
-        transition: Transition.circularReveal,
-      );
-    },
+    onTap: onTap,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -170,16 +225,18 @@ Widget popularItemsList(BuildContext context, index) {
         SizedBox(
           width: 41.w,
           child: buildTextHeader(
-            text: 'Security Cameras',
-            fontSize: 13.sp,
+            text: popularHeader[index],
+            fontSize: 13.5.sp,
           ),
         ),
         verticalSpace(1),
         SizedBox(
           width: 35.w,
           child: buildTextBody(
-            text: 'Recommended services',
+            text: popularBody[index],
             isCenter: false,
+            maxLines: 3,
+            isOverflew: true,
           ),
         ),
       ],

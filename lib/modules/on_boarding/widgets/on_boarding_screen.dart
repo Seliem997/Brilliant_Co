@@ -37,20 +37,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     OnBoardingItemsModel(
         image: 'assets/images/boarding1.png',
         coloredText: 'solutions,',
-        textTitle: 'we give you ',
-        textBody: 'you get the results'
+        textTitle: 'We give you ',
+        textBody: 'you get the results.',
     ),
     OnBoardingItemsModel(
         image: 'assets/images/boarding2.png',
-        coloredText: 'solutions,',
-        textTitle: 'we give you ',
-        textBody: 'you get the results'
+        coloredText: 'strategy',
+        textTitle: 'The right digital marketing ',
+        textBody: 'grow & increase leads.',
     ),
     OnBoardingItemsModel(
         image: 'assets/images/boarding3.png',
-        coloredText: 'solutions,',
-        textTitle: 'we give you ',
-        textBody: 'you get the results'
+        coloredText: 'free',
+        textTitle: 'Communicate and Consulting ',
+        textBody: 'with Brilliant Company.',
     ),
   ];
 
@@ -58,9 +58,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     var boardController=PageController();
-
-
-
 
     return Stack(
       children: [
@@ -128,14 +125,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         Positioned(
           bottom: 2.h,
           right: 3.w,
-          child: isLast ? SizedBox(
-            width: 30.w,
-            child: defaultButton(
-                function: (){
-                  submit();
-                },
-                textData: 'get Start',
-            ),
+          child: isLast ?
+          defaultButton(
+            height: 7.h,
+              width: 93.w,
+              function: (){
+                submit();
+              },
+              textData: 'Get Started',
+            textSize: 20.sp,
+            isUpperCase: false,
           ) : FloatingActionButton(
             backgroundColor: kDefaultColor,
             onPressed: (){

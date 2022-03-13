@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
 
   void goToNextPage() {
     Future.delayed(const Duration(seconds: 3), (){
-      Get.to( () => const OnBoardingView(), transition: Transition.fade );
+      Get.to( () => const OnBoardingView(), transition: Transition.circularReveal );
     });
   }
 }

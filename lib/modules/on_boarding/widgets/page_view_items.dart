@@ -8,7 +8,7 @@ import 'on_boarding_item_model.dart';
 Widget buildPageViewItem(BuildContext context,OnBoardingItemsModel model) {
   return Column(
     children: [
-      verticalSpace(7),
+      verticalSpace(4),
       SizedBox(
         height: 65.h,
         child: Image(
@@ -20,16 +20,16 @@ Widget buildPageViewItem(BuildContext context,OnBoardingItemsModel model) {
         children: [
           Text(
             model.textTitle,
-            style: const TextStyle(
-              fontSize: 22,
+            style: TextStyle(
+              fontSize: 16.sp,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             model.coloredText,
-            style: const TextStyle(
+            style: TextStyle(
               color: kDefaultColor,
-              fontSize: 22,
+              fontSize: 16.5.sp,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -38,8 +38,8 @@ Widget buildPageViewItem(BuildContext context,OnBoardingItemsModel model) {
       verticalSpace(1),
       Text(
         model.textBody,
-        style: const TextStyle(
-          fontSize: 22,
+        style: TextStyle(
+          fontSize: 17.sp,
         ),
       ),
     ],

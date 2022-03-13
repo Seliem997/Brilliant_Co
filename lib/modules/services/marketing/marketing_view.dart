@@ -24,8 +24,7 @@ class MarketingView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SearchWithFilter(),
-              verticalSpace(2),
+              // const SearchWithFilter(),
               buildTextHeader(text: 'Marketing',fontSize: 17.sp),
               buildTextBody(text: 'Marketing services'),
               verticalSpace(1),
@@ -36,28 +35,37 @@ class MarketingView extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               verticalSpace(2),
-              buildTextHeader(text: 'Services',fontSize: 17.sp),
+              buildTextHeader(text: 'Strategy',fontSize: 18.sp,isBold: false),
               verticalSpace(1),
-              buildServiceProvided(
-                width: double.infinity,
-                height: 24.h,
-                image: 'icons/facebook',
-                textHead: 'SOCIAL MEDIA MARKETING',
-                textBody: 'Keep customers attracted to your business profile and market your brand by adding personality to your business',
-              ),
-              buildServiceProvided(
-                width: double.infinity,
-                height: 24.h,
-                image: 'icons/facebook',
-                textHead: 'SOCIAL MEDIA MARKETING',
-                textBody: 'Keep customers attracted to your business profile and market your brand by adding personality to your business',
-              ),
-              buildServiceProvided(
-                width: double.infinity,
-                height: 24.h,
-                image: 'icons/facebook',
-                textHead: 'SOCIAL MEDIA MARKETING',
-                textBody: 'Keep customers attracted to your business profile and market your brand by adding personality to your business',
+              Container(
+                // color: Color(0xff3A3B3C).withOpacity(.30),
+                color: Colors.transparent.withOpacity(.7),
+                padding: const EdgeInsets.all(8),
+                child: Column(
+                  children: [
+                    buildServiceProvided(
+                      width: double.infinity,
+                      height: 30.h,
+                      image: 'images/marketing_social_provide',
+                      textHead: 'SOCIAL MEDIA MARKETING',
+                      textBody: 'Being on social platforms & building an audience interested in your product or service is essential, but the main axis to reach the largest number of customers is by spreading on each platform (Facebook, YouTube, Twitter..etc) with a complete marketing system',
+                    ),
+                    buildServiceProvided(
+                      width: double.infinity,
+                      height: 28.h,
+                      image: 'images/marketing_promotion_provide',
+                      textHead: 'Full Promotion Process',
+                      textBody: 'We analyzes your field, starting from collecting customers\' data in terms of interests and behaviors that will benefit your business, organizing many advertising campaigns, and coordinating a complete study of the market and competitors.',
+                    ),
+                    buildServiceProvided(
+                      width: double.infinity,
+                      height: 28.h,
+                      image: 'images/marketing_digital_provide',
+                      textHead: 'Digital Marketing',
+                      textBody: 'Digital marketing is your smart gateway to increase your sales, reach your potential customers, and your organization progress with effective marketing methods and well-thought-out strategies.',
+                    ),
+                  ],
+                ),
               ),
 
               verticalSpace(.5),
@@ -79,6 +87,7 @@ class MarketingView extends StatelessWidget {
                 child: buildTextHeader(
                   text: 'Let’s Talk about your Digital Marketing Strategy',
                   fontSize: 13.5.sp,
+                  isBold: false,
                 ),
               ),
               verticalSpace(1),

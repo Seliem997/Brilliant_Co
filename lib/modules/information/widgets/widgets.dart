@@ -5,6 +5,7 @@ import 'package:brilliant/shared/components/whatsapp_chat.dart';
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -29,11 +30,10 @@ Column buildFollowUs() {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(
-        'Follow us',
+        translator.translate('Follow us'),
         style: TextStyle(
-          color: Colors.black,
-          fontSize: 16.sp,
-          fontWeight: FontWeight.bold,
+          // color: Colors.black,
+          fontSize: 18.sp,
         ),
       ),
       verticalSpace(1),
@@ -43,7 +43,7 @@ Column buildFollowUs() {
             icon: const ImageIcon(
               AssetImage("assets/icons/facebook.png"),
             ),
-            iconSize: 50,
+            iconSize: 36,
             color: const Color(0xFF3B5998),
             splashColor: kDefaultSecondColor,
             onPressed: () {
@@ -58,7 +58,7 @@ Column buildFollowUs() {
             icon: const ImageIcon(
               AssetImage("assets/icons/twitter.png"),
             ),
-            iconSize: 50,
+            iconSize: 36,
             color: const Color(0xFF1DA1F2),
             splashColor: kDefaultSecondColor,
             onPressed: () {
@@ -73,7 +73,7 @@ Column buildFollowUs() {
             icon: const ImageIcon(
               AssetImage("assets/icons/linkedin.png"),
             ),
-            iconSize: 50,
+            iconSize: 36,
             color: const Color(0xFF0077b5),
             splashColor: kDefaultSecondColor,
             onPressed: () {
@@ -96,32 +96,13 @@ Column buildContactWith(context) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(
-        'Share with Brilliant',
+        translator.translate('Share with Brilliant'),
         style: TextStyle(
-          color: Colors.black,
+          // color: Colors.black,
           fontSize: 17.sp,
-          fontWeight: FontWeight.bold,
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: InkWell(
-          onTap: (){
-            Get.to(
-                  () => const WebViewScreen(url: 'https://www.google.com/maps/dir/30.7912434,30.9991027/30.7979304,31.0049441/@30.7945348,30.9974102,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0',),
-              transition: Transition.zoom,
-            );
-          },
-          child: Text('  📍 Tanta, Gharbia, EGY',
-            style: TextStyle(
-              color: kDefaultSecondColor,
-              fontWeight: FontWeight.w600 ,
-              fontSize: 14.sp,
-              // fontFamily: 'cairo',
-            ),
-          ),
-        ),
-      ),
+      verticalSpace(.5),
       Row(
         children: [
           Expanded(
@@ -130,7 +111,7 @@ Column buildContactWith(context) {
               onPressed: (){
                 openWhatsapp(context);
               },
-              labelText: 'Mail us',
+              labelText: translator.translate('Mail us'),
               icon: const Icon(Icons.mail_outline_sharp),
               height: 6.h,
               // radius: 30,
@@ -147,7 +128,7 @@ Column buildContactWith(context) {
               onPressed: () async{
                 launch('tel://+201029994052');
               },
-              labelText: 'Call us',
+              labelText: translator.translate('Call us'),
               icon: const Icon(Icons.call_outlined),
               // radius: 30,
               textColor: Colors.white,
@@ -159,6 +140,26 @@ Column buildContactWith(context) {
           ),
         ],
       ),
+      // Padding(
+      //   padding: const EdgeInsets.all(12.0),
+      //   child: InkWell(
+      //     onTap: (){
+      //       Get.to(
+      //             () => const WebViewScreen(url: 'https://www.google.com/maps/dir/30.7912434,30.9991027/30.7979304,31.0049441/@30.7945348,30.9974102,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0',),
+      //         transition: Transition.zoom,
+      //       );
+      //     },
+      //     child: Text('  📍 Tanta, Gharbia, EGY',
+      //       style: TextStyle(
+      //         color: kDefaultSecondColor,
+      //         fontWeight: FontWeight.w600 ,
+      //         fontSize: 14.sp,
+      //         // fontFamily: 'cairo',
+      //       ),
+      //     ),
+      //   ),
+      // ),
+
     ],
   );
 }

@@ -1,14 +1,17 @@
 import 'package:brilliant/modules/service_details/widgets/widgets.dart';
 import 'package:brilliant/shared/components/components.dart';
 import 'package:brilliant/shared/components/default_buttons.dart';
-import 'package:brilliant/shared/components/whatsapp_chat.dart';
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ServiceDetails extends StatelessWidget {
-  const ServiceDetails({Key? key}) : super(key: key);
+  const ServiceDetails({Key? key, required this.image, required this.serviceName, required this.serviceInfo, required this.serviceDetails}) : super(key: key);
+
+  final String image;
+  final String serviceName;
+  final String serviceInfo;
+  final String serviceDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class ServiceDetails extends StatelessWidget {
           children: [
             Stack(
               children: [
-                imageServiceItem(context),
+                imageServiceItem(context: context,imageDetails: image),
                 defaultBackButton(context),
               ],
             ),
@@ -27,13 +30,14 @@ class ServiceDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  buildTextHeader(text: 'Details',color: kDefaultSecondColor),
+                  verticalSpace(1),
+                  buildTextHeader(text: serviceName, ),
                   verticalSpace(2),
-                  buildTextBody(text:'    The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',),
+                  buildTextBody(text:serviceInfo,),
                   verticalSpace(3),
-                  buildTextHeader(text: 'Services',color: kDefaultSecondColor),
+                  buildTextHeader(text: 'Services',color: kDefaultSecondColor,isBold: false),
                   verticalSpace(2),
-                  buildTextBody(text:'    Here, we\'re over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.'),
+                  buildTextBody(text: serviceDetails),
                   verticalSpace(4),
                   DefaultGradientButton(
                     text: 'Request Service',
@@ -76,49 +80,3 @@ class ServiceDetails extends StatelessWidget {
 
 
 }
-
-Column buildRequestServiceSheet(BuildContext context) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      buildTextHeader(text: 'Request Service',fontSize: 18.sp,color: kDefaultBlackColor,),
-      verticalSpace(2.5),
-      buildContactWay(
-        textWayName: 'Whatsapp',
-        imageWay: 'whatsapp',
-        textWayValue: '01069500944',
-        labelName: 'Contact',
-        iconWay: const Icon(Icons.send),
-        function: () {
-          openWhatsapp(context);
-        },
-        backgroundButton: Colors.green,
-      ),
-      verticalSpace(2.5),
-      buildContactWay(
-        textWayName: 'Phone',
-        imageWay: 'phone',
-        textWayValue: '010 2999 4052',
-        labelName: 'Call now',
-        iconWay: const Icon(Icons.local_phone_sharp,),
-        function: ()async {
-          launch('tel://+201029994052');
-        },
-        backgroundButton: kDefaultColor,
-      ),
-    ],
-  );
-}
-
-Widget imageServiceItem(BuildContext context) {
-  return Container(
-    height: 60.h,
-    decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/images/details.png"),
-          fit: BoxFit.fitWidth,
-        ),
-    ),
-  );
-}
-

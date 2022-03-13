@@ -25,9 +25,9 @@ Widget serviceItem(BuildContext context, {required String text, required Gesture
       child: Center(
         child: buildTextHeader(
             text: text,
-            fontSize: 16.sp,
+            fontSize: 15.sp,
             color: Colors.white,
-            isBold: true,
+            isBold: false,
         ),
       ),
 
@@ -35,3 +35,13 @@ Widget serviceItem(BuildContext context, {required String text, required Gesture
   );
 }
 
+Container buildCarouselSliderItem({required String assetsImage}) {
+  return Container(
+    decoration: BoxDecoration(
+        image: DecorationImage(
+          image:AssetImage("assets/images/$assetsImage.png"),
+          fit: BoxFit.cover,
+        ),
+        borderRadius: BorderRadius.circular(30)),
+  );
+}

@@ -45,3 +45,22 @@ Column buildContactWay({
     ],
   );
 }
+
+
+
+Widget imageServiceItem({
+  required BuildContext context,
+  required String imageDetails,
+}) {
+  return Container(
+    height: 60.h,
+    decoration: BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage("assets/images/$imageDetails.png"),
+        // fit: BoxFit.fitWidth,
+        fit: BoxFit.cover
+      ),
+    ),
+  );
+}
+

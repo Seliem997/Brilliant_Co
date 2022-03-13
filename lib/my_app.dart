@@ -8,6 +8,7 @@ import 'package:sizer/sizer.dart';
 
 import 'layout/cubit/cubit.dart';
 import 'layout/cubit/states.dart';
+import 'modules/splash/splash_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key,required this.isDark,required this.startWidget,/* required this.onBoarding*/}) : super(key: key);

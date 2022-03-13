@@ -11,7 +11,7 @@ Padding buildItemGeneralSettings({
     child: GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 10.h,
+        height: 8.h,
         decoration: BoxDecoration(
           color: kDefaultColor.withOpacity(0.06),
           borderRadius: BorderRadius.circular(40),
@@ -24,7 +24,7 @@ Padding buildItemGeneralSettings({
                 title,
                 style: const TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.w400,
+                  // fontWeight: FontWeight.w400,
                 ),
               ),
               const Spacer(),

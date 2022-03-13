@@ -15,7 +15,8 @@ class AppCubit extends Cubit<AppStates>{
   int currentIndex = 1;
 
   List<Widget> bottomScreens=[
-    const InformationView(),
+
+     const InformationView(),
     const HomeView(),
   //   BottomSheet(
   //     backgroundColor: Colors.green.withOpacity(.5),

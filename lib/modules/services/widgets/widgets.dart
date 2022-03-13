@@ -17,7 +17,7 @@ SizedBox buildServiceProvided({
   double? heightImage,
 }) {
   return SizedBox(
-    width: width ?? 29.5.w,
+    width: width ?? 29.6.w,
     height: height ?? 29.h,
     child: Column(
       children: [
@@ -30,13 +30,13 @@ SizedBox buildServiceProvided({
         verticalSpace(1),
         buildTextHeader(
           text: textHead,
-          fontSize: 13.5.sp,
+          fontSize: 12.sp,
         ),
         verticalSpace(1),
         buildTextBody(
           text: textBody,
           fontSize: 10.sp,
-          maxLines: 5,
+          maxLines: 8,
           isOverflew: true,
         ),
       ],
@@ -45,7 +45,10 @@ SizedBox buildServiceProvided({
 }
 
 
-Row buildRequestHeaderService(BuildContext context,{required String image,required String text,}) {
+Row buildRequestHeaderService(BuildContext context, {
+      required String image,
+      required String text,
+    }) {
   return Row(
     children: [
       Image(

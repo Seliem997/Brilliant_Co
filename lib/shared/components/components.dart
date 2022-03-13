@@ -1,7 +1,11 @@
 
+import 'package:brilliant/modules/service_details/widgets/widgets.dart';
+import 'package:brilliant/shared/components/whatsapp_chat.dart';
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:sizer/sizer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 Widget defaultFormField({
   required TextEditingController controller,
@@ -50,14 +54,14 @@ Widget horizontalSpace(double width) => SizedBox(width: width.w,);
 
 Text buildTextHeader({required String text, Color? color,double? fontSize,bool isBold = true,}) {
   return Text(
-    text,
+    text.tr(),
     maxLines: 2,
     overflow: TextOverflow.ellipsis,
     style: TextStyle(
       color: color,
       fontSize: fontSize ?? 20.sp ,
       fontWeight: isBold == true ? FontWeight.bold : FontWeight.normal,
-      fontFamily: 'requestFont',
+      fontFamily: 'poppins',
       letterSpacing: 1.0,
     ),
   );
@@ -71,7 +75,7 @@ Text buildTextBody({
   bool? isCenter,
 }) {
   return Text(
-    text,
+    text.tr(),
     maxLines: maxLines,
     overflow: isOverflew? TextOverflow.ellipsis : null,
     textAlign: isCenter==null ? TextAlign.center : TextAlign.start,
@@ -82,3 +86,36 @@ Text buildTextBody({
   );
 }
 
+
+Column buildRequestServiceSheet(BuildContext context) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      buildTextHeader(text: 'Request Service',fontSize: 18.sp,color: kDefaultBlackColor,),
+      verticalSpace(2.5),
+      buildContactWay(
+        textWayName: 'Whatsapp',
+        imageWay: 'whatsapp',
+        textWayValue: '01069500944',
+        labelName: 'Contact',
+        iconWay: const Icon(Icons.send),
+        function: () {
+          openWhatsapp(context);
+        },
+        backgroundButton: Colors.green,
+      ),
+      verticalSpace(2.5),
+      buildContactWay(
+        textWayName: 'Phone',
+        imageWay: 'phone',
+        textWayValue: '01029994052',
+        labelName: 'Call now',
+        iconWay: const Icon(Icons.local_phone_sharp,),
+        function: ()async {
+          launch('tel://+201029994052');
+        },
+        backgroundButton: kDefaultColor,
+      ),
+    ],
+  );
+}

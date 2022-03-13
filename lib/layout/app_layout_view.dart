@@ -15,40 +15,38 @@ class AppLayoutView extends StatelessWidget {
 
         var cubit=AppCubit.get(context);
 
-        return  SafeArea(
-          child: Scaffold(
+        return  Scaffold(
 
-            body: cubit.bottomScreens[cubit.currentIndex],
-            bottomNavigationBar: BottomNavigationBar(
-              currentIndex: cubit.currentIndex,
+          body: cubit.bottomScreens[cubit.currentIndex],
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: cubit.currentIndex,
 
-              onTap: (index) {
-                cubit.changeBottom(index);
-              },
-              items: [
+            onTap: (index) {
+              cubit.changeBottom(index);
+            },
+            items: [
 
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.info_outline_rounded,
-                  ),
-                  label: 'information'.tr(),
+              BottomNavigationBarItem(
+                icon: const Icon(
+                  Icons.info_outline_rounded,
                 ),
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.home,
-                  ),
-                  label: 'home'.tr(),
+                label: 'information'.tr(),
+              ),
+              BottomNavigationBarItem(
+                icon: const Icon(
+                  Icons.home,
                 ),
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                      Icons.settings,
-                  ),
-                  // label: translator.translate('settings'),
-                  label: 'settings'.tr(),
+                label: 'home'.tr(),
+              ),
+              BottomNavigationBarItem(
+                icon: const Icon(
+                    Icons.settings,
                 ),
+                // label: translator.translate('settings'),
+                label: 'settings'.tr(),
+              ),
 
-              ],
-            ),
+            ],
           ),
         ) ;
       },

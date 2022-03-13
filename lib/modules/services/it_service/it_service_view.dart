@@ -17,6 +17,7 @@ class ItServicesView extends StatelessWidget {
     List<String> headLines=[
       'Security Cameras',
       'Point Of Sale',
+      'VOIP System',
     ];
 
     return Scaffold(
@@ -37,8 +38,8 @@ class ItServicesView extends StatelessWidget {
                 text: 'Smart home solutions. Easily expand your Smart Home with Smart devices. Start building your smart home now with a wide set of useful automation.',
 
               ),
-              verticalSpace(2),
-              buildTextHeader(text: 'Services :'),
+              verticalSpace(1),
+              buildTextHeader(text: 'Services :',isBold: false,),
               verticalSpace(2),
               buildItService(
                 context,
@@ -52,7 +53,15 @@ class ItServicesView extends StatelessWidget {
                 context,
                 serviceName:  headLines[1],
                 serviceImage: 'pos',
-                serviceDescription: 'The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',
+                serviceDescription: 'A POS system allows your business to accept payments from customers and keep track of sales.',
+                serviceInfo: 'Here, we\'re going over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
+              ),
+              verticalSpace(2),
+              buildItService(
+                context,
+                serviceName:  headLines[2],
+                serviceImage: 'voip',
+                serviceDescription: 'Allows you to make voice calls using a broadband Internet connection.',
                 serviceInfo: 'Here, we\'re going over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
               ),
               verticalSpace(2),
@@ -60,6 +69,7 @@ class ItServicesView extends StatelessWidget {
                 child: buildTextHeader(
                   text: 'Let’s Talk about your IT Services',
                   fontSize: 13.5.sp,
+                  isBold: false,
                 ),
               ),
               verticalSpace(1),

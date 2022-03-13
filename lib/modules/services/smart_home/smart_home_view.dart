@@ -1,4 +1,3 @@
-import 'package:brilliant/modules/service_details/service_details.dart';
 import 'package:brilliant/modules/services/widgets/widgets.dart';
 import 'package:brilliant/shared/components/components.dart';
 import 'package:brilliant/shared/components/default_buttons.dart';
@@ -35,16 +34,19 @@ class SmartHomeView extends StatelessWidget {
               Row(
                 children: [
                   buildServiceProvided(
+                    height: 33.h,
                     image: 'images/consulation',
                     textHead: 'Consulting',
                     textBody: 'Schedule a free consultation with our representative for an informative, no pressure experience.',
                   ),
                   buildServiceProvided(
+                    height: 33.h,
                     image: 'images/installation',
                     textHead: 'Installation',
                     textBody: ' A professional installation at no cost to you to work in the way that best suits your needs.',
                   ),
                   buildServiceProvided(
+                    height: 33.h,
                     image: 'images/maintenance',
                     textHead: 'Maintenance',
                     textBody: 'Protect your device with our smart maintenance plans.',

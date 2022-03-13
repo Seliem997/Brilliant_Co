@@ -58,19 +58,21 @@ ThemeData darkTheme= ThemeData(
     titleSpacing: 20,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: kDefaultNightModeColor,
+      // statusBarColor: Color(0xFF3A3B3C) ,
       statusBarIconBrightness: Brightness.light,
     ),
     titleTextStyle: TextStyle(
       color: Colors.white,
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
+      fontSize: 22,
+      fontWeight: FontWeight.w500,
       letterSpacing: 1.5,
     ),
-    backgroundColor: Colors.transparent,
+    // backgroundColor: Colors.transparent,
+    backgroundColor: Color(0xFF3A3B3C),
     elevation: 0.0,
     iconTheme: IconThemeData(
       color: kDefaultColor,
-      size: 14,
+      size: 18,
     ),
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(

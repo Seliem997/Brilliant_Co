@@ -4,25 +4,31 @@ import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-Column buildItService(BuildContext context,{required String serviceName,required String serviceImage,required String serviceDescription,required String serviceInfo,}) {
+Column buildItService(BuildContext context,{
+  required String serviceName,
+  required String serviceImage,
+  required String serviceDescription,
+  required String serviceInfo,
+}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       itServiceImage(context,image: serviceImage,),
-      verticalSpace(1),
+      verticalSpace(1.5),
       buildTextHeader(
         text: serviceName,
         fontSize: 17.sp,
         color: kDefaultColor,
       ),
       verticalSpace(2),
-      buildTextBody(text: 'Description :',color: kDefaultSecondColor,),
+      buildTextBody(text: 'Description :',color: kDefaultSecondColor,fontSize: 14.sp),
       verticalSpace(1),
       buildTextBody(
         text: serviceDescription,
       ),
-      buildTextBody(text: 'Information :',color: kDefaultSecondColor,),
       verticalSpace(1.5),
+      buildTextBody(text: 'Information :',color: kDefaultSecondColor,fontSize: 14.sp),
+      verticalSpace(1),
       buildTextBody(
         text: serviceInfo,
       ),
