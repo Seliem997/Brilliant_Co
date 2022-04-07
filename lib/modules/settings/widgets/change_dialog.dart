@@ -62,7 +62,7 @@ class DialogAppearanceModeState extends State<DialogAppearanceMode>
         child: ScaleTransition(
           scale: scaleAnimation,
           child: buildDialogContainer(
-            title: 'You want change to '.tr() + appearanceMode,
+            title: 'You want change to ' + appearanceMode,
             valueOne: appearanceMode,
             valueTwo: 'Cancel'.tr(),
           ),
@@ -88,7 +88,7 @@ class DialogAppearanceModeState extends State<DialogAppearanceMode>
                       padding: const EdgeInsets.only(
                           top: 30.0, left: 20.0, right: 20.0),
                       child: Text(
-                        title,
+                        title.tr(),
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18.sp,
@@ -108,7 +108,7 @@ class DialogAppearanceModeState extends State<DialogAppearanceMode>
                                 Navigator.pop(context);
                               });
                             },
-                            textData: valueOne,
+                            textData: valueOne.tr(),
                             textSize: 13.sp,
                             width: 37.w,
                             height: 6.h,
@@ -126,7 +126,7 @@ class DialogAppearanceModeState extends State<DialogAppearanceMode>
                                     Navigator.pop(context);
                                     // functionTwo;
                                   },
-                                  textData: valueTwo,
+                                  textData: valueTwo.tr(),
                                   textSize: 12.sp,
                                   width: 30.w,
                                   height: 6.h,

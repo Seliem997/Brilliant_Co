@@ -5,7 +5,6 @@ import 'package:brilliant/modules/services/shipping/shipping_view.dart';
 import 'package:brilliant/modules/services/smart_home/smart_home_view.dart';
 import 'package:brilliant/shared/components/components.dart';
 import 'package:brilliant/shared/styles/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

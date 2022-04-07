@@ -1,10 +1,10 @@
 
-import 'package:brilliant/modules/service_details/service_details.dart';
 import 'package:brilliant/shared/components/components.dart';
 import 'package:brilliant/shared/components/default_buttons.dart';
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 
 
 SizedBox buildServiceProvided({
@@ -62,8 +62,8 @@ Row buildRequestHeaderService(BuildContext context, {
         child: Column(
           children: [
             Text(
-              text,
-              maxLines: 6,
+              text.tr(),
+              maxLines: 7,
               overflow: TextOverflow.ellipsis,
             ),
             verticalSpace(1),

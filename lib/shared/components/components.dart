@@ -1,11 +1,12 @@
 
-import 'package:brilliant/modules/service_details/widgets/widgets.dart';
-import 'package:brilliant/shared/components/whatsapp_chat.dart';
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../modules/popular_service_details/widgets/widgets.dart';
+import 'launch_view.dart';
 
 Widget defaultFormField({
   required TextEditingController controller,
@@ -117,5 +118,29 @@ Column buildRequestServiceSheet(BuildContext context) {
         backgroundButton: kDefaultColor,
       ),
     ],
+  );
+}
+
+
+
+PreferredSizeWidget defaultAppBar({
+  required context,
+  required String title,
+  List<Widget>? actions,
+}){
+  return AppBar(
+    // leading: IconButton(
+    //   onPressed: (){
+    //     Navigator.pop(context);
+    //   },
+    //   icon: Icon(
+    //     translator.activeLanguageCode == 'ar' ? Icons.arrow_forward : Icons.arrow_back_ios_new,
+    //     size: 20,
+    //   ),
+    // ),
+    title: Text(
+      title.tr(),
+    ),
+    actions: actions,
   );
 }

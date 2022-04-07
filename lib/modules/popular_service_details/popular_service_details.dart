@@ -1,12 +1,15 @@
-import 'package:brilliant/modules/service_details/widgets/widgets.dart';
+import 'package:brilliant/modules/popular_service_details/widgets/widgets.dart';
 import 'package:brilliant/shared/components/components.dart';
 import 'package:brilliant/shared/components/default_buttons.dart';
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class ServiceDetails extends StatelessWidget {
-  const ServiceDetails({Key? key, required this.image, required this.serviceName, required this.serviceInfo, required this.serviceDetails}) : super(key: key);
+import '../home/widgets/list_view.dart';
+
+
+class PopularServiceDetails extends StatelessWidget {
+  const PopularServiceDetails({Key? key, required this.image, required this.serviceName, required this.serviceInfo, required this.serviceDetails}) : super(key: key);
 
   final String image;
   final String serviceName;
@@ -33,11 +36,11 @@ class ServiceDetails extends StatelessWidget {
                   verticalSpace(1),
                   buildTextHeader(text: serviceName, ),
                   verticalSpace(2),
-                  buildTextBody(text:serviceInfo,),
+                  buildTextBody(text: serviceInfo,),
                   verticalSpace(3),
                   buildTextHeader(text: 'Services',color: kDefaultSecondColor,isBold: false),
                   verticalSpace(2),
-                  buildTextBody(text: serviceDetails),
+                  buildTextBody(text: serviceDetails,isCenter: false),
                   verticalSpace(4),
                   DefaultGradientButton(
                     text: 'Request Service',

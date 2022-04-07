@@ -12,6 +12,7 @@ void main() async{
 
   WidgetsFlutterBinding.ensureInitialized();
 
+
   await translator.init(
     localeType: LocalizationDefaultType.device,
     languagesList: <String>['ar', 'en'],

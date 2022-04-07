@@ -8,7 +8,7 @@ Column buildItService(BuildContext context,{
   required String serviceName,
   required String serviceImage,
   required String serviceDescription,
-  required String serviceInfo,
+  String? serviceInfo,
 }) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,13 +25,17 @@ Column buildItService(BuildContext context,{
       verticalSpace(1),
       buildTextBody(
         text: serviceDescription,
+        isCenter: false,
       ),
       verticalSpace(1.5),
-      buildTextBody(text: 'Information :',color: kDefaultSecondColor,fontSize: 14.sp),
-      verticalSpace(1),
+      serviceInfo!=null?
+      buildTextBody(text: 'Information :',color: kDefaultSecondColor,fontSize: 14.sp) : verticalSpace(1),
+      serviceInfo!=null?
+      verticalSpace(1):verticalSpace(0),
+      serviceInfo!=null?
       buildTextBody(
         text: serviceInfo,
-      ),
+      ) : verticalSpace(0),
       verticalSpace(1),
       const Padding(
         padding: EdgeInsets.symmetric(horizontal: 50),

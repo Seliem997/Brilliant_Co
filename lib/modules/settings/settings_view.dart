@@ -16,92 +16,78 @@ class SettingsView extends StatelessWidget {
 
 
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          verticalSpace(5),
+          Align(
+            alignment: AlignmentDirectional.topStart,
+            child: buildTextHeader(text: 'Settings'),
+          ),
+
+          verticalSpace(3),
           Text(
-            'Settings'.tr(),
-            style: Theme.of(context).textTheme.headline4,
+            'General'.tr(),
+            // textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headline5,
           ),
 
-          verticalSpace(2),
-          Column(
-            children: [
-              Text(
-                'General'.tr(),
-                // textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline5,
-              ),
+          verticalSpace(5),
 
-              verticalSpace(5),
-
-              buildItemGeneralSettings(
-                title: 'Change appearance'.tr(),
-                onTap: (){
-                  showDialog(
-                    context: context,
-                    builder: (_) => const DialogAppearanceMode(
-                     /* functionOne: (){
-                        AppCubit.get(context).changeAppMode();
-                      },
-                      functionTwo: (){},
-                      title:  'You want change to $appearanceMode',
-                      valueOne: appearanceMode,
-                      valueTwo: 'Cancel',*/
-                    ),
-                  );
-                },
-              ),
-
-              buildItemGeneralSettings(
-                title: 'Change Language'.tr(),
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (_) => const DialogChangeLanguage(),
-                  );
-                },
-              ),
-
-              const Divider(color: kDefaultSecondColor,),
-
-              buildItemGeneralSettings(
-                title: 'faq'.tr(),
-                onTap: () { },
-              ),
-
-              buildItemGeneralSettings(
-                title: 'Documentation'.tr(),
-                onTap: () { },
-              ),
-
-              verticalSpace(5),
-              DefaultGradientButton(
-                text: 'BUY NOW'.tr(),
-                function: (){
-                  showModalBottomSheet(
-                      backgroundColor: Colors.transparent,
-                      context: context,
-                      builder: (context) {
-                        return Container(
-                          height: 40.h,
-                          decoration: const BoxDecoration(
-                            color: kLightGreyColor,
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(5.w),
-                            child: buildRequestServiceSheet(context),
-                          ),
-                        );
-                      });
-                },),
-
-            ],
+          buildItemGeneralSettings(
+            title: 'Change appearance',
+            onTap: (){
+              showDialog(
+                context: context,
+                builder: (_) => const DialogAppearanceMode(
+                 /* functionOne: (){
+                    AppCubit.get(context).changeAppMode();
+                  },
+                  functionTwo: (){},
+                  title:  'You want change to $appearanceMode',
+                  valueOne: appearanceMode,
+                  valueTwo: 'Cancel',*/
+                ),
+              );
+            },
           ),
 
+          buildItemGeneralSettings(
+            title: 'Change Language',
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (_) => const DialogChangeLanguage(),
+              );
+            },
+          ),
+
+          verticalSpace(5),
+          const Divider(thickness: 1,color: kDefaultSecondColor,),
+          verticalSpace(5),
+          buildTextBody(text: 'version : '.tr()+'1.0.1'),
+          const Spacer(),
+          DefaultGradientButton(
+            text: 'BUY NOW',
+            function: (){
+              showModalBottomSheet(
+                  backgroundColor: Colors.transparent,
+                  context: context,
+                  builder: (context) {
+                    return Container(
+                      height: 40.h,
+                      decoration: const BoxDecoration(
+                        color: kLightGreyColor,
+                        borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(5.w),
+                        child: buildRequestServiceSheet(context),
+                      ),
+                    );
+                  });
+            },),
+          verticalSpace(3),
         ],
       ),
     );

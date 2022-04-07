@@ -1,6 +1,7 @@
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 
 Padding buildItemGeneralSettings({
   required String title,
@@ -21,7 +22,7 @@ Padding buildItemGeneralSettings({
           child: Row(
             children: [
               Text(
-                title,
+                title.tr(),
                 style: const TextStyle(
                   fontSize: 20,
                   // fontWeight: FontWeight.w400,

@@ -1,23 +1,29 @@
 import 'package:brilliant/modules/home/widgets/widgets.dart';
-import 'package:brilliant/modules/service_details/service_details.dart';
+import 'package:brilliant/modules/popular_service_details/popular_service_details.dart';
 import 'package:brilliant/modules/services/call_center/call_center_view.dart';
 import 'package:brilliant/modules/services/it_service/it_service_view.dart';
 import 'package:brilliant/modules/services/marketing/marketing_view.dart';
-import 'package:brilliant/modules/services/shipping/shipping_view.dart';
 import 'package:brilliant/modules/services/smart_home/smart_home_view.dart';
 import 'package:brilliant/shared/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:localize_and_translate/localize_and_translate.dart';
 
 
 List<String> services = [
-  translator.translate('it Services'),
-  translator.translate('Smart Home'),
-  translator.translate('Marketing'),
-  translator.translate('Call Center'),
-  translator.translate('Shipping'),
+  'IT Services',
+  'Smart Home',
+  'Marketing',
+  'Call Center',
+  // 'Shipping',
+];
+
+List<String> servicesImageCat = [
+  'technical-support_cat',
+  'smart-tv_cat',
+  'social-media_cat',
+  'call-center_cat',
+  // 'Shipping',
 ];
 
 List<Widget> servicesOnTap = [
@@ -25,11 +31,11 @@ List<Widget> servicesOnTap = [
   const SmartHomeView(),
   const MarketingView(),
   const CallCenterView(),
-  const ShippingView(),
+  // const ShippingView(),
 ];
 
 
-List<String> popular = [
+List<String> popularImage = [
   'popular1',
   'popular2',
   'popular3',
@@ -53,39 +59,36 @@ List<String> popularBody = [
 
 
 List<Widget> popularOnTap = [
-  ServiceDetails(
+  PopularServiceDetails(
     image: 'security_cam_popular',
     serviceName: popularHeader[0],
-    serviceInfo: 'The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',
-    serviceDetails: 'Here, we\'re over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
-
+    serviceInfo: 'popular security cam info',
+    serviceDetails: 'popular security cam service details',
   ),
-  ServiceDetails(
+  PopularServiceDetails(
     image: 'marketing_popular',
     serviceName: popularHeader[1],
-    serviceInfo: 'The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',
-    serviceDetails: 'Here, we\'re over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
-
+    serviceInfo: 'popular marketing info',
+    serviceDetails: 'popular marketing service details',
   ),
-  ServiceDetails(
+  PopularServiceDetails(
     image: 'smart_home_popular',
     serviceName: popularHeader[2],
-    serviceInfo: 'The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',
-    serviceDetails: 'Here, we\'re over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
-
+    serviceInfo: 'popular smart home info',
+    serviceDetails: 'popular smart home service details',
   ),
-  ServiceDetails(
+  PopularServiceDetails(
     image: 'call_center_popular',
     serviceName: popularHeader[3],
-    serviceInfo: 'The world of home security cameras can be a lot, especially if you\'re not familiar with home security in general.',
-    serviceDetails: 'Here, we\'re over the different types of cameras, whether you need one or not, how to install them, and more. If it\'s security camera-related, we\'ve got you covered.',
-
+    serviceInfo: 'popular call center info',
+    serviceDetails: 'popular call center service details',
   ),
 ];
 
+
 Widget buildListServicesItems() {
   return SizedBox(
-    height: 6.h,
+    height: 16.h,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: services.length,
@@ -93,6 +96,7 @@ Widget buildListServicesItems() {
         return serviceItem(
           context,
           text: services[index],
+          assetsImageCat: servicesImageCat[index],
           onTap: () {
             Get.to(
               () => servicesOnTap[index],
@@ -176,14 +180,16 @@ Widget buildListPopularItems() {
     height: 43.h,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemCount: popular.length,
+      itemCount: popularImage.length,
       itemBuilder: (context, index) {
         return popularItemsList(
           context,
           index,
           onTap: (){
             Get.to(
-              () => popularOnTap[index],
+              () {
+                return popularOnTap[index];
+              },
               transition: Transition.rightToLeftWithFade,
             );
           }
@@ -206,7 +212,7 @@ Widget popularItemsList(BuildContext context, index,{required GestureTapCallback
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/images/${popular[index]}.png',
+                'assets/images/${popularImage[index]}.png',
               ),
               fit: BoxFit.cover,
             ),

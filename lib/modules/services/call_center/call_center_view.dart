@@ -4,6 +4,7 @@ import 'package:brilliant/shared/components/default_buttons.dart';
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 
 class CallCenterView extends StatelessWidget {
   const CallCenterView({Key? key}) : super(key: key);
@@ -12,33 +13,35 @@ class CallCenterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Call Center',
+        title: Text(
+          'Call Center'.tr(),
         ),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               buildRequestHeaderService(
                 context,
                 image: 'call_center_details',
-                text: 'Smart home solutions. Easily expand your Smart Home with Smart devices. Start building your smart home now with a wide set of useful automation.',
+                text: 'The unified number communication system Now you can do a comprehensive development of the communication system In your organization, whatever its size',
               ),
-              Align(
-                alignment: AlignmentDirectional.topStart,
-                child: buildTextHeader(
-                  text: 'Services :',
-                  fontSize: 17.sp,
-                ),
-              ),
-              Image(
-                image: const AssetImage('assets/images/carousal3.png'),
-                height: 20.h,
+              buildTextHeader(
+                text: 'Services',
+                fontSize: 17.sp,
               ),
               buildTextBody(
-                maxLines: 3,
+                isCenter: false,
+                text: 'The call center can provide you with many features that interest you, and it also deals with a large number of calls at the same time.',
+              ),
+              Image(
+                image: const AssetImage('assets/images/bannerCallCenter.png'),
+                height: 20.h,
+              ),
+              verticalSpace(2),
+              buildTextBody(
                 text: 'Now you can do a comprehensive development of the communication system in your organization.',
               ),
               verticalSpace(2),
@@ -61,41 +64,51 @@ class CallCenterView extends StatelessWidget {
 
                 ],
               ),
-              Align(
-                alignment: AlignmentDirectional.topStart,
-                child: buildTextHeader(
-                    text: 'We Provide you',
-                    fontSize: 16.sp,
-                    isBold: false
-                ),
+              buildTextHeader(
+                  text: 'We Provide you',
+                  fontSize: 16.sp,
+                  isBold: false
               ),
               verticalSpace(2),
               buildTextBody(
-                text: 'We can make ordinary things smart, and do their own tasks remotely.',
+                text: 'Possibility to work from outside the company s headquarters.',
               ),
-              verticalSpace(1.5),
+              verticalSpace(1),
               buildTextBody(
-                text: 'Everyone is looking for safety, comfort and control over everything We can use the pieces to do something different.',
+                text: 'Recorded message and automatic reply (IVR) services.',
               ),
-              verticalSpace(1.5),
+              verticalSpace(1),
               buildTextBody(
-                text: 'Some devices can be installed through which we can control the whole house.',
+                text: 'Recording and monitoring of calls.',
               ),
-              verticalSpace(1.5),
+              verticalSpace(1),
               buildTextBody(
-                text: 'You can make a script for your daily routine and record it on an application.',
+                text: 'Detailed reports for calls and employee performance indicators.',
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 35),
-                child: Divider(color: kDefaultLightColor,thickness: 2,),
+              verticalSpace(1),
+              buildTextBody(
+                text: 'Automatically distribute calls.',
               ),
-              verticalSpace(2),
-              Center(
-                child: buildTextHeader(
-                  text: 'Let’s Talk about your Call Center Strategy',
-                  fontSize: 13.5.sp,
-                  isBold: false,
-                ),
+              verticalSpace(1),
+              buildTextBody(
+                text: 'Control and keep calls outside work hours.',
+              ),
+              verticalSpace(1),
+              buildTextBody(
+                text: 'Connectivity and the ability to receive and transfer calls between branches.',
+              ),
+              verticalSpace(1),
+              buildTextBody(
+                text: 'A mobile application that allows receiving and sending calls outside the workplace.',
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 2.h),
+                child: const Divider(color: kDefaultLightColor,thickness: 2,),
+              ),
+              buildTextHeader(
+                text: 'Let’s Talk about your Call Center Strategy',
+                fontSize: 13.5.sp,
+                isBold: false,
               ),
               verticalSpace(1),
               buildTextBody(

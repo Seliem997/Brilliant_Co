@@ -1,6 +1,7 @@
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 
 class DefaultGradientButton extends StatelessWidget {
    const DefaultGradientButton({Key? key,
@@ -27,7 +28,7 @@ class DefaultGradientButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: function,
         child: Text(
-          text,
+          text.tr(),
           style: const TextStyle(
             fontSize: 20,
             color: Colors.white,
@@ -46,6 +47,7 @@ Widget defaultButton({
   double? textSize,
   double radius = 5,
   Color backgroundButton = kDefaultColor,
+  Color? buttonTextColor,
   bool isUpperCase = true,
   required VoidCallback function,
   required String textData,
@@ -56,11 +58,11 @@ Widget defaultButton({
     child: MaterialButton(
       onPressed: function,
       child: Text(
-        isUpperCase ? textData.toUpperCase() : textData,
+        isUpperCase ? textData.toUpperCase().tr() : textData.tr(),
         style: TextStyle(
-          fontSize: textSize ?? 20,
-          color: Colors.white,
-          // fontWeight: FontWeight.bold,
+          fontSize: textSize ?? 16.sp,
+          color: buttonTextColor ?? Colors.white,
+          fontWeight: FontWeight.w400,
           letterSpacing: 1,
         ),
       ),
@@ -92,14 +94,14 @@ Widget defaultButtonWithIcon({
     child: ElevatedButton.icon(
       onPressed: onPressed,
       icon: icon,
-      label:  Text(isUpperCase ? labelText.toUpperCase() : labelText),
+      label:  Text(isUpperCase ? labelText.tr().toUpperCase() : labelText.tr()),
       style: ElevatedButton.styleFrom(
         primary: backgroundButton ?? kDefaultColor,
         onPrimary: textColor ?? kDefaultSecondColor,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
         ),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        padding: const EdgeInsets.symmetric( horizontal: 5),
         textStyle: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: labelSize ?? 20,
@@ -119,14 +121,24 @@ Widget defaultBackButton(context){
         color: kLightGreyColor,
         borderRadius: BorderRadius.circular(15),
       ),
-      child: IconButton(
+      child: translator.activeLanguageCode == 'ar' ? Directionality(
+        textDirection: TextDirection.ltr,
+        child: IconButton(
+          icon: const Icon(Icons.arrow_forward_ios_sharp),
+          color: kDefaultColor,
+          padding: EdgeInsets.zero,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ) : IconButton(
         icon: const Icon(Icons.arrow_back_ios_new_sharp),
         color: kDefaultColor,
         padding: EdgeInsets.zero,
         onPressed: () {
           Navigator.pop(context);
         },
-      ),
+      )
     ),
   );
 }

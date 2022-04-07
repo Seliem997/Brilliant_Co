@@ -6,7 +6,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:localize_and_translate/localize_and_translate.dart';
+
+import '../services/call_center/call_center_view.dart';
+import '../services/it_service/it_service_view.dart';
+import '../services/marketing/marketing_view.dart';
+import '../services/smart_home/smart_home_view.dart';
 
 
 class HomeView extends StatelessWidget {
@@ -16,13 +20,62 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
 
     List<Widget> itemsCarouselList = [
-      buildCarouselSliderItem(assetsImage: 'carousal1'),
-      buildCarouselSliderItem(assetsImage: 'carousal2'),
-      buildCarouselSliderItem(assetsImage: 'carousal3'),
-      buildCarouselSliderItem(assetsImage: 'carousal4'),
-    ];
+      //
+      // buildCategoriesItem(
+      //   textName: 'IT Services',
+      //   imageName: 'it',
+      //   onTap: (){
+      //     Get.to(
+      //           () => const ItServicesView(),
+      //       transition: Transition.upToDown,
+      //     );
+      //   },
+      // ),
+      buildCarouselSliderItem(
+        color: const Color(0xFF39A1D9),
+        imageName: 'carousal2',
+        textHeader: 'Call Center',
+        textBody: 'Discover the special packages now, especially for you',
+        buttonColor: const Color(0xFFF99E02),
+        onTap: (){
+          Get.to(
+                () => const CallCenterView(),
+            transition: Transition.rightToLeftWithFade,
+          );
+        },
+        buttonTextColor: Colors.white
+      ),
+      buildCarouselSliderItem(
+        color: const Color(0xFFF99E02),
+        imageName: 'carousal3',
+        textHeader: 'Marketing',
+        textBody: 'Gain Business awareness, grow and increase leads with the right digital marketing strategy',
+        buttonColor: Colors.white,
+        buttonTextColor: Colors.black,
+        onTap: (){
+          Get.to(
+                () => const MarketingView(),
+            transition: Transition.native,
+          );
+        },
+      ),
+      buildCarouselSliderItem(
+        color: const Color(0xFF39D9D9),
+        imageName: 'carousal4',
+        textHeader: 'Smart Home',
+        textBody: 'A professional installation at no cost to you to work in the way that best suits your needs.',
+        textColor: Colors.black,
+        buttonColor: Colors.white,
+        buttonTextColor: Colors.black,
+        onTap: (){
+          Get.to(
+                () => const SmartHomeView(),
+            transition: Transition.zoom,
+          );
+        },
+      ),
 
-    // var searchController=TextEditingController();
+    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -47,27 +100,6 @@ class HomeView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //************************** Brilliant Top Logo *************************
-            /*  verticalSpace(1),
-              SafeArea(
-                child: Container(
-                  height: 7.h,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    image: const DecorationImage(
-                      image: AssetImage("assets/images/blur_logo.png",),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: const Image(
-                    image: AssetImage("assets/images/Brilliant2.png"),
-                  ),
-                ),
-              ),
-              verticalSpace(3),*/
-              // searchTextFilter(controller: searchController, label: 'Search Services'),
-              // const SearchWithFilter(),
               verticalSpace(1),
               CarouselSlider(
                   items: itemsCarouselList,
@@ -82,8 +114,9 @@ class HomeView extends StatelessWidget {
                     autoPlayAnimationDuration: const Duration(seconds: 1),
                     autoPlayCurve: Curves.fastOutSlowIn,
                     scrollDirection: Axis.horizontal,
-                  )),
-              verticalSpace(3),
+                  ),
+              ),
+              verticalSpace(1.5),
               Row(
                 children: [
 
@@ -104,6 +137,7 @@ class HomeView extends StatelessWidget {
               ),
               verticalSpace(1),
               buildListServicesItems(),
+              verticalSpace(.5),
               buildTextHeader(text: 'Popular'),
               verticalSpace(1),
               buildListPopularItems(),
