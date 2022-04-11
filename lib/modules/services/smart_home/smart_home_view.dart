@@ -106,7 +106,7 @@ class SmartHomeView extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 color: kDefaultSecondColor.withOpacity(0.15),
                 // color: kOnSecondaryContainerColor.withOpacity(.2),
-                height: 55.h,
+                height: 60.h,
                 child: ListView.separated(
                   shrinkWrap: true,
                   itemBuilder: (context, index) => smartHomeListServices(
@@ -123,15 +123,18 @@ class SmartHomeView extends StatelessWidget {
                 isCenter: false,
               ),
               verticalSpace(2),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 2.h),
+                child: const Divider(color: kDefaultLightColor,thickness: 2,),
+              ),
               buildTextHeader(
-                text: 'Watch Video',
-                fontSize: 17.sp,
+                text: 'Let’s Talk about your Smart Home Scenario.',
+                fontSize: 13.5.sp,
+                isBold: false,
               ),
               verticalSpace(1),
-              Image(
-                image: const AssetImage('assets/images/smart_video.png'),
-                // fit: BoxFit.cover,
-                height: 20.h,
+              buildTextBody(
+                text: 'Please contact us, and we will respond to you within 24 hours.',
               ),
               verticalSpace(2),
               DefaultGradientButton(

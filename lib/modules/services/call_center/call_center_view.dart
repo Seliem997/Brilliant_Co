@@ -41,8 +41,8 @@ class CallCenterView extends StatelessWidget {
                 height: 20.h,
               ),
               verticalSpace(2),
-              buildTextBody(
-                text: 'Now you can do a comprehensive development of the communication system in your organization.',
+              buildTextBody(isCenter: false,
+                text: 'Now you can do a comprehensive development of the communication system in your organization, because Its not just a Contact Center. Its a Context Center.',
               ),
               verticalSpace(2),
               Row(
@@ -70,37 +70,22 @@ class CallCenterView extends StatelessWidget {
                   isBold: false
               ),
               verticalSpace(2),
-              buildTextBody(
-                text: 'Possibility to work from outside the company s headquarters.',
-              ),
+              buildRowWeProvide(text: 'A mobile application that allows receiving and sending calls outside the workplace.',),
               verticalSpace(1),
-              buildTextBody(
-                text: 'Recorded message and automatic reply (IVR) services.',
-              ),
+              buildRowWeProvide(text: 'Detailed reports for calls and employee performance indicators.'),
               verticalSpace(1),
-              buildTextBody(
-                text: 'Recording and monitoring of calls.',
-              ),
+              buildRowWeProvide(text: 'Recorded message and automatic reply (IVR) services.',),
               verticalSpace(1),
-              buildTextBody(
-                text: 'Detailed reports for calls and employee performance indicators.',
-              ),
+              buildRowWeProvide(text: 'Recording and monitoring of calls.'),
+
               verticalSpace(1),
-              buildTextBody(
-                text: 'Automatically distribute calls.',
-              ),
+              buildRowWeProvide(text: 'Automatically distribute calls.'),
               verticalSpace(1),
-              buildTextBody(
-                text: 'Control and keep calls outside work hours.',
-              ),
+              buildRowWeProvide(text: 'Control and keep calls outside work hours.'),
               verticalSpace(1),
-              buildTextBody(
-                text: 'Connectivity and the ability to receive and transfer calls between branches.',
-              ),
+              buildRowWeProvide(text: 'Connectivity and the ability to receive and transfer calls between branches.'),
               verticalSpace(1),
-              buildTextBody(
-                text: 'A mobile application that allows receiving and sending calls outside the workplace.',
-              ),
+              buildRowWeProvide(text: 'Possibility to work from outside the company s headquarters.',),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 2.h),
                 child: const Divider(color: kDefaultLightColor,thickness: 2,),
@@ -142,5 +127,28 @@ class CallCenterView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Row buildRowWeProvide({required String text}) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: .55.h),
+                  child: const Icon(
+                    Icons.check_circle,
+                    color: Colors.blue,
+                    size: 16,
+                  ),
+                ),
+                horizontalSpace(1),
+                Expanded(
+                  child: buildTextBody(
+                    text: text,
+                    isCenter: false,
+                  ),
+                ),
+              ],
+            );
   }
 }

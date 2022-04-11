@@ -28,9 +28,11 @@ SizedBox buildServiceProvided({
           // fit: BoxFit.cover,
         ),
         verticalSpace(1),
-        buildTextHeader(
-          text: textHead,
-          fontSize: 12.sp,
+        FittedBox(
+          child: buildTextHeader(
+            text: textHead,
+            fontSize: 12.sp,
+          ),
         ),
         verticalSpace(1),
         buildTextBody(

@@ -1,8 +1,8 @@
 import 'package:brilliant/modules/web_view/web_view.dart';
 import 'package:brilliant/shared/components/components.dart';
 import 'package:brilliant/shared/components/default_buttons.dart';
+import 'package:brilliant/shared/components/navigate.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -35,10 +35,7 @@ Row buildFollowUs(context) {
         width: 10.w,
         child: InkWell(
           onTap: (){
-            Get.to(
-              () => const WebViewScreen(url: 'https://www.facebook.com/1Brilliant.Business/?ref=page_internal',),
-              transition: Transition.circularReveal,
-            );
+            navigateTo(context,const WebViewScreen(url: 'https://www.facebook.com/1Brilliant.Business/?ref=page_internal',));
           },
           child: const Image(image: AssetImage("assets/icons/Facebook11.png"),),),
       ),
@@ -47,10 +44,7 @@ Row buildFollowUs(context) {
         width: 10.w,
         child: GestureDetector(
           onTap: (){
-            Get.to(
-              () => const WebViewScreen(url: 'https://www.linkedin.com/company/brilliant7/mycompany/',),
-              transition: Transition.circularReveal,
-            );
+            navigateTo(context, const WebViewScreen(url: 'https://www.linkedin.com/company/brilliant7/mycompany/',));
           },
           child: const Image(image: AssetImage("assets/icons/LinkedIn11.png"),),),
       ),
@@ -63,7 +57,7 @@ Column buildContactWith(context) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(
-        translator.translate('Share with Brilliant'),
+        'Share with Brilliant'.tr(),
         style: TextStyle(
           // color: Colors.black,
           fontSize: 17.sp,

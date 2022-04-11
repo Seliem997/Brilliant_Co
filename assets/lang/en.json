@@ -3,6 +3,20 @@
   "home" : "Home",
   "information" : "Information",
   "Categories" : "Categories",
+
+  "شغل صفحة on Boarding  ********************" : "******************* شغل صفحة  on Boarding ",
+  "SKIP" : "SKIP",
+  "solutions," : "solutions,",
+  "We give you " : "We give you ",
+  "you get the results." : "you get the results.",
+  "strategy" : "Strategy",
+  "The right digital marketing " : "The right digital marketing ",
+  "grow & increase leads." : "grow & increase leads.",
+  "free" : "free",
+  "Communicate and Consulting " : "Communicate and Consulting ",
+  "with Brilliant Company." : "with Brilliant Company.",
+  "Get Started" : "Get Started",
+
   "شغل صفحة Home  ********************" : "******************* شغل صفحة  Home ",
 
   "Discover the special packages now, especially for you" : "Discover the special packages now, especially for you",
@@ -29,11 +43,13 @@
   "شغل صفحة information  ********************" : "******************* شغل صفحة  information ",
   "\uD83D\uDCCD Tanta, Gharbia, EGY" : "\uD83D\uDCCD Tanta, Gharbia, EGY",
   "About us .." : "About us ..",
-  "   customize and convenient POS system that can be adoptable every industry.The best comprehensive company in Egypt, started as a company specialized in the field of computing and point of sale solutions, we jumped into the professional POS business and has grown since into point of sale, Hardware sales and POS solution supplier." : "   customize and convenient POS system that can be adoptable every industry.The best comprehensive company in Egypt, started as a company specialized in the field of computing and point of sale solutions, we jumped into the professional POS business and has grown since into point of sale, Hardware sales and POS solution supplier.",
+  "   customize and convenient POS system that can be adoptable every industry.The best comprehensive company in Egypt, started as a company specialized in the field of computing and point of sale solutions, we jumped into the professional POS business and has grown since into point of sale, Hardware sales and POS solution supplier." : "We are working with our customers to help them Plan, Build their IT infrastructure, Surveillance Systems and digital marketing.",
   "Our Mission .." : "Our Mission ..",
-  "   Our Mission is to achieve the reputation of a quality, high standard & reliable solution & service Provider company in the ICT industry." : "   Our Mission is to achieve the reputation of a quality, high standard & reliable solution & service Provider company in the ICT industry.",
+  "   Our Mission is to achieve the reputation of a quality, high standard & reliable solution & service Provider company in the ICT industry." : "Our Mission is to enable businesses to grow by using our effective marketing strategies and to deliver maximum amount of satisfaction to our valuable partners.",
   "Our Vision .." : "Our Vision ..",
-  "   Our Vision is to achieve 100% customer satisfaction by delivering quality products and service at an affordable cost. we are aiming to become an entity in technology based corporate solutions, capable of demanding unconditional response from the targeted niche." : "   Our Vision is to achieve 100% customer satisfaction by delivering quality products and service at an affordable cost. we are aiming to become an entity in technology based corporate solutions, capable of demanding unconditional response from the targeted niche.",
+  "   Our Vision is to achieve 100% customer satisfaction by delivering quality products and service at an affordable cost. we are aiming to become an entity in technology based corporate solutions, capable of demanding unconditional response from the targeted niche." : "We believe also, that Information Technology Today had to be the most important asset in any business, due to the massive enhancements and increasing of productivity that IT can provide to any business.",
+  "Our Values .." : "Our Values ..",
+  "You will find us attentive, proactive and highly engaged with our customers. Since digital is a fast-moving technology, we move with our customers into building long-term sustainable relation-ships." : "You will find us attentive, proactive and highly engaged with our customers. Since (digital) is a fast-moving technology, we move with our customers into building long-term sustainable relation-ships.",
   "Follow us" : "Follow us",
   "Share with Brilliant" : "Share with Brilliant",
   "Request Service" : " Request Service",
@@ -90,6 +106,7 @@
   "Some devices can be installed through which we can control the whole house." : "Some devices can be installed through which we can control the whole house.",
   "You can make a script for your daily routine and record it on an application." : "You can make a script for your daily routine and record it on an application.",
   "Watch Video" : "Watch Video",
+  "Let’s Talk about your Smart Home Scenario." : "Let’s Talk about your Smart Home Scenario",
   "Request" : "Request",
 
   "شغل صفحة IT  ********************" : "******************* شغل صفحة  IT ",
@@ -111,8 +128,10 @@
 
 
   "شغل صفحة call Center  ********************" : "******************* شغل صفحة  call Center ",
+
   "The unified number communication system Now you can do a comprehensive development of the communication system In your organization, whatever its size" : "The unified number communication system Now you can do a comprehensive development of the communication system In your organization, whatever its size",
-  "Now you can do a comprehensive development of the communication system in your organization." : "Now you can do a comprehensive development of the communication system in your organization.",
+  "The call center can provide you with many features that interest you, and it also deals with a large number of calls at the same time." : "The call center can provide you with many features that interest you, and it also deals with a large number of calls at the same time.",
+  "Now you can do a comprehensive development of the communication system in your organization, because Its not just a Contact Center. Its a Context Center." : "Now you can do a comprehensive development of the communication system in your organization, because It's not just a Contact Center. It's a Context Center.",
   "Contacting" : "Contacting",
   "Send and receive calls from a computer or through an application on the phone from a unified number" : "Send and receive calls from a computer or through an application on the phone from a unified number",
   "Connecting" : "Connecting",
@@ -129,9 +148,11 @@
   "Let’s Talk about your Call Center Strategy" : "Let’s Talk about your Call Center Strategy",
 
   "شغل صفحة marketing  ********************" : "******************* شغل صفحة  marketing ",
+
   "Marketing services" : "Marketing services",
-  "Strategy" : "Strategy",
-  "Gain business awareness, grow and increase leads with the right digital marketing strategy" : "Gain business awareness, grow and increase leads with the right digital marketing strategy",
+  "Marketing products or services through social networking sites Easier, faster, cheaper, more effective and flexible than traditional marketing methods" : "Marketing products or services through social networking sites Easier, faster, cheaper, more effective and flexible than traditional marketing methods.",
+  "Gain business awareness, grow and increase leads with the right digital marketing strategy." : "Gain business awareness, grow and increase leads with the right digital marketing strategy.",
+  "Marketing Strategy" : "Marketing Strategy ",
   "SOCIAL MEDIA MARKETING" : "SOCIAL MEDIA MARKETING",
   "Being on social platforms & building an audience interested in your product or service is essential, but the main axis to reach the largest number of customers is by spreading on each platform (Facebook, YouTube, Twitter..etc) with a complete marketing system" : "Being on social platforms & building an audience interested in your product or service is essential, but the main axis to reach the largest number of customers is by spreading on each platform (Facebook, YouTube, Twitter..etc) with a complete marketing system",
   "Full Promotion Process" : "Full Promotion Process",
@@ -146,26 +167,24 @@
   "شغل صفحة popular cameras  ********************" : "******************* شغل صفحة  popular cameras ",
 
   "popular security cam info" : "The world of home security cameras can be a lot, especially if you're not familiar with home security in general.\n\nA video camera that records people's activities for detection is a device Video recording that captures snapshots of your home and property",
-  "popular security cam service details" : "  You can watch them on a smartphone, tablet or computer from anywhere using the Internet.\n\n  Most home security cameras are motion activated and will record when motion is detected, as well as send you an alert on your phone.",
+  "popular security cam service details" : "You can watch them on a smartphone, tablet or computer from anywhere using the Internet.\n\nMost home security cameras are motion activated and will record when motion is detected, as well as send you an alert on your phone.",
 
   "شغل صفحة popular marketing  ********************" : "******************* شغل صفحة  popular marketing ",
 
   "popular marketing info" : "Digital marketing is your smart gateway to increase your sales, reach your potential customers and advance your organization with effective marketing methods and well-thought-out strategies.",
-  "popular marketing service details" : "  It includes promoting brands to connect with potential customers using the Internet and other digital forms of communication.\n\n  This includes not only email, social media, and web-based advertising, but also text and multimedia messaging as a marketing channel.",
+  "popular marketing service details" : "It includes promoting brands to connect with potential customers using the Internet and other digital forms of communication.\n\nThis includes not only email, social media, and web-based advertising, but also text and multimedia messaging as a marketing channel.",
 
 
   "شغل صفحة popular smart home  ********************" : "******************* شغل صفحة  popular smart home ",
 
   "popular smart home info" : "A smart home is building home automation and linking various devices and systems in the home together so that they can all be controlled from anywhere, and create the required interaction among them.",
-  "popular smart home service details" : "  Everyone is looking for safety, comfort and control in everything We can use the pieces to make something different.\n\n  We can make ordinary things smart, and do their own tasks remotely.\n\n  Some devices can be installed with which we can control the whole house.\n\n  You can text your daily routine and record it on an app.",
+  "popular smart home service details" : "Everyone is looking for safety, comfort and control in everything We can use the pieces to make something different.\n\nWe can make ordinary things smart, and do their own tasks remotely.\n\nSome devices can be installed with which we can control the whole house.\n\nYou can text your daily routine and record it on an app.",
 
 
   "شغل صفحة popular call center  ********************" : "******************* شغل صفحة  popular call center ",
 
   "popular call center info" : "The call center can provide you with many features that interest you, and it also handles a large number of calls at the same time",
-  "popular call center service details" : "  Communicate with employees inside & outside the workplace for free.\n\n  Send and receive calls From a computer or through Application on the phone from a unified number.",
-
-
+  "popular call center service details" : "Communicate with employees inside & outside the workplace for free.\n\nSend and receive calls From a computer or through Application on the phone from a unified number.",
 
 
   "" : ""

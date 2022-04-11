@@ -3,10 +3,9 @@ import 'package:brilliant/modules/services/it_service/it_service_view.dart';
 import 'package:brilliant/modules/services/marketing/marketing_view.dart';
 import 'package:brilliant/modules/services/smart_home/smart_home_view.dart';
 import 'package:brilliant/shared/components/components.dart';
+import 'package:brilliant/shared/components/navigate.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:localize_and_translate/localize_and_translate.dart';
 
 class CategoriesServices extends StatelessWidget {
   const CategoriesServices({Key? key}) : super(key: key);
@@ -27,10 +26,7 @@ class CategoriesServices extends StatelessWidget {
               imageCat: 'centerCat',
               textName: 'Call Center',
               onTap: (){
-                Get.to(
-                      () => const CallCenterView(),
-                  transition: Transition.upToDown,
-                );
+                navigateTo(context, const CallCenterView());
               },
             ),
 
@@ -39,10 +35,8 @@ class CategoriesServices extends StatelessWidget {
                 imageName: 'smart',
                 imageCat: 'smartCat',
                 onTap: (){
-                  Get.to(
-                        () => const SmartHomeView(),
-                    transition: Transition.downToUp,
-                  );
+                  navigateTo(context, const SmartHomeView());
+
                 },
               ),
 
@@ -51,10 +45,8 @@ class CategoriesServices extends StatelessWidget {
                 imageName: 'marketing',
                 imageCat: 'marketingCat',
                 onTap: (){
-                  Get.to(
-                        () => const MarketingView(),
-                    transition: Transition.leftToRightWithFade,
-                  );
+                  navigateTo(context, const MarketingView());
+
                 },
              ),
 
@@ -63,10 +55,8 @@ class CategoriesServices extends StatelessWidget {
                 imageName: 'it',
                 imageCat: 'itCat',
                 onTap: (){
-                  Get.to(
-                        () => const ItServicesView(),
-                    transition: Transition.fadeIn,
-                  );
+                  navigateTo(context, const ItServicesView());
+
                 },
              ),
 

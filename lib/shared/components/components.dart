@@ -129,18 +129,13 @@ PreferredSizeWidget defaultAppBar({
   List<Widget>? actions,
 }){
   return AppBar(
-    // leading: IconButton(
-    //   onPressed: (){
-    //     Navigator.pop(context);
-    //   },
-    //   icon: Icon(
-    //     translator.activeLanguageCode == 'ar' ? Icons.arrow_forward : Icons.arrow_back_ios_new,
-    //     size: 20,
-    //   ),
-    // ),
     title: Text(
       title.tr(),
     ),
     actions: actions,
   );
 }
+
+
+
+Widget? widget;

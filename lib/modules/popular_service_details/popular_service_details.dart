@@ -5,7 +5,6 @@ import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../home/widgets/list_view.dart';
 
 
 class PopularServiceDetails extends StatelessWidget {
@@ -35,13 +34,13 @@ class PopularServiceDetails extends StatelessWidget {
                 children: [
                   verticalSpace(1),
                   buildTextHeader(text: serviceName, ),
+                  verticalSpace(.5),
+                  buildTextBody(text: serviceInfo,isCenter: false),
                   verticalSpace(2),
-                  buildTextBody(text: serviceInfo,),
-                  verticalSpace(3),
                   buildTextHeader(text: 'Services',color: kDefaultSecondColor,isBold: false),
-                  verticalSpace(2),
+                  verticalSpace(.5),
                   buildTextBody(text: serviceDetails,isCenter: false),
-                  verticalSpace(4),
+                  verticalSpace(2),
                   DefaultGradientButton(
                     text: 'Request Service',
                     function: (){
@@ -64,10 +63,10 @@ class PopularServiceDetails extends StatelessWidget {
                     },
                     boxShadow: [
                       BoxShadow(
-                        color: kDefaultSecondColor.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 2,
-                        offset: const Offset(0, 3),
+                        color: kDefaultSecondColor.withOpacity(0.3),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: const Offset(0, 1),
                       ),
                     ],
                   ),

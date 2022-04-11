@@ -25,7 +25,10 @@ class MarketingView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               buildTextHeader(text: 'Marketing',fontSize: 17.sp),
-              buildTextBody(isCenter: false,text: 'Marketing products or services through social networking sites Easier, faster, cheaper, more effective and flexible than traditional marketing methods'),
+              buildTextBody(
+                isCenter: false,
+                text: 'Marketing products or services through social networking sites Easier, faster, cheaper, more effective and flexible than traditional marketing methods',
+              ),
               Container(
                 height: 40.h,
                 width: double.infinity,
@@ -45,24 +48,7 @@ class MarketingView extends StatelessWidget {
                   ),
                 ),
               ),
-              // Stack(
-              //   children: [
-              //     Image(
-              //       image: const AssetImage('assets/images/banner_marketing.png'),
-              //
-              //       fit: BoxFit.cover,
-              //     ),
-              //     Padding(
-              //       padding: EdgeInsets.symmetric(vertical: 6.h ),
-              //       child: buildTextBody(
-              //         text: 'Gain business awareness, grow and increase leads with the right digital marketing strategy',
-              //         color: Colors.white,
-              //         fontSize: 19.sp,
-              //       ),
-              //     ),
-              //   ],
-              // ),
-              buildTextHeader(text: 'Strategy',fontSize: 18.sp,isBold: false),
+              buildTextHeader(text: 'Marketing Strategy',fontSize: 18.sp,isBold: false),
               verticalSpace(1),
               Column(
                   children: [

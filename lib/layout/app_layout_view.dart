@@ -15,7 +15,7 @@ class AppLayoutView extends StatelessWidget {
 
         var cubit=AppCubit.get(context);
 
-        return  Scaffold(
+        return Scaffold(
 
           body: cubit.bottomScreens[cubit.currentIndex],
           bottomNavigationBar: BottomNavigationBar(

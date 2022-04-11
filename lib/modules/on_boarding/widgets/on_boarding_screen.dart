@@ -1,10 +1,11 @@
 import 'package:brilliant/layout/app_layout_view.dart';
 import 'package:brilliant/modules/on_boarding/widgets/page_view_items.dart';
 import 'package:brilliant/shared/components/default_buttons.dart';
+import 'package:brilliant/shared/components/navigate.dart';
 import 'package:brilliant/shared/network/local/cache_helper.dart';
 import 'package:brilliant/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -24,10 +25,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   void submit(){
     CacheHelper.saveData(key: 'OnBoarding', value: true).then((value) {
       if(value){
-        Get.to(
-              () => const AppLayoutView(),
-          transition: Transition.rightToLeftWithFade,
-        );
+        navigateAndFinish(context, const AppLayoutView());
       }
     });
 
@@ -93,9 +91,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               onTap: (){
                 submit();
               },
-              child: const Text(
-                'SKIP',
-                style: TextStyle(
+              child: Text(
+                'SKIP'.tr(),
+                style: const TextStyle(
                   fontSize: 22,
                   color: Colors.white,
                   letterSpacing: 1,
@@ -126,27 +124,34 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           bottom: 2.h,
           right: 3.w,
           child: isLast ?
-          defaultButton(
-            height: 7.h,
-              width: 93.w,
-              function: (){
-                submit();
+            defaultButton(
+              height: 7.h,
+                width: 94.w,
+                function: (){
+                  submit();
+                },
+                textData: 'Get Started',
+              textSize: 20.sp,
+              isUpperCase: false,
+            ) : FloatingActionButton(
+              backgroundColor: kDefaultColor,
+              onPressed: (){
+                  boardController.nextPage(
+                    duration: const Duration(milliseconds: 750),
+                    curve: Curves.fastLinearToSlowEaseIn,
+                  );
               },
-              textData: 'Get Started',
-            textSize: 20.sp,
-            isUpperCase: false,
-          ) : FloatingActionButton(
-            backgroundColor: kDefaultColor,
-            onPressed: (){
-                boardController.nextPage(
-                  duration: const Duration(milliseconds: 750),
-                  curve: Curves.fastLinearToSlowEaseIn,
-                );
-            },
-            child: const Icon(
-              Icons.arrow_forward_ios,
+              child: translator.activeLanguageCode == 'ar' ?
+                const Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                  ),
+                )
+              : const Icon(
+                Icons.arrow_forward_ios,
+                ),
             ),
-          ),
         ),
 
       ],

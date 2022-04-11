@@ -35,6 +35,7 @@ Column buildItService(BuildContext context,{
       serviceInfo!=null?
       buildTextBody(
         text: serviceInfo,
+        isCenter: false,
       ) : verticalSpace(0),
       verticalSpace(1),
       const Padding(

@@ -1,6 +1,5 @@
 import 'package:brilliant/shared/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../shared/components/launch_view.dart';
@@ -38,6 +37,10 @@ class InformationView extends StatelessWidget {
                       buildTextHeader(text: 'Our Vision ..',fontSize: 18.sp),
                       verticalSpace(.5),
                       buildTextBody(isCenter: false,text: '   Our Vision is to achieve 100% customer satisfaction by delivering quality products and service at an affordable cost. we are aiming to become an entity in technology based corporate solutions, capable of demanding unconditional response from the targeted niche.',),
+                      verticalSpace(4),
+                      buildTextHeader(text: 'Our Values ..',fontSize: 18.sp),
+                      verticalSpace(.5),
+                      buildTextBody(isCenter: false,text: 'You will find us attentive, proactive and highly engaged with our customers. Since digital is a fast-moving technology, we move with our customers into building long-term sustainable relation-ships.',),
                       verticalSpace(2),
                       buildContactWith(context),
                     ],
@@ -58,13 +61,9 @@ class InformationView extends StatelessWidget {
                   InkWell(
                       onTap: (){
                         openMap();
-                       /* Get.to(
-                              () => const WebViewScreen(url: 'https://www.google.com/maps/dir/30.7912434,30.9991027/30.7979304,31.0049441/@30.7945348,30.9974102,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0',),
-                          transition: Transition.zoom,
-                        );*/
                       },
                       child: buildTextBody(
-                        text: '📍 Tanta, Gharbia, EGY'.tr,
+                        text: '📍 Tanta, Gharbia, EGY',
                         fontSize: 10.sp,
                       ),
                   ),

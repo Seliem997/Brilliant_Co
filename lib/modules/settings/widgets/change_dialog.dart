@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../shared/network/local/cache_helper.dart';
+
 class DialogAppearanceMode extends StatefulWidget {
   // final String title;
   // final String valueOne;
@@ -62,7 +64,7 @@ class DialogAppearanceModeState extends State<DialogAppearanceMode>
         child: ScaleTransition(
           scale: scaleAnimation,
           child: buildDialogContainer(
-            title: 'You want change to ' + appearanceMode,
+            title: 'You want change to '.tr() + appearanceMode,
             valueOne: appearanceMode,
             valueTwo: 'Cancel'.tr(),
           ),
@@ -101,23 +103,25 @@ class DialogAppearanceModeState extends State<DialogAppearanceMode>
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.all(10.0),
-                          child: defaultButton(
-                            function: (){
-                              setState(() {
-                                AppCubit.get(context).changeAppMode();
-                                Navigator.pop(context);
-                              });
-                            },
-                            textData: valueOne.tr(),
-                            textSize: 13.sp,
-                            width: 37.w,
-                            height: 6.h,
-                            isUpperCase: false,
+                          child: FittedBox(
+                            child: defaultButton(
+                              function: (){
+                                setState(() {
+                                  AppCubit.get(context).changeAppMode();
+                                  // LocalizedApp.restart(context);
+                                  Navigator.pop(context);
+                                });
+                              },
+                              textData: valueOne.tr(),
+                              textSize: 12.sp,
+                              width: 40.w,
+                              height: 6.h,
+                              isUpperCase: false,
+                            ),
                           ),
                         ),
                         Padding(
-                            padding: const EdgeInsets.only(
-                                left: 20.0, right: 10.0, top: 10.0, bottom: 10.0),
+                            padding: const EdgeInsets.all(10),
                             child:  ButtonTheme(
                                 height: 35.0,
                                 minWidth: 110.0,
@@ -140,6 +144,9 @@ class DialogAppearanceModeState extends State<DialogAppearanceMode>
             ));
   }
 }
+
+
+
 
 
 class DialogChangeLanguage extends StatefulWidget {
@@ -233,19 +240,19 @@ class DialogChangeLanguageState extends State<DialogChangeLanguage>
                               newLanguage: translator.activeLanguageCode == 'ar' ? 'en' : 'ar',
                               restart: true,
                             );
+                            print('Light mode value from cache is ${ CacheHelper.returnData(key: 'isDarkMode')}');
 
                           });
                         },
                         textData: valueOne,
-                        textSize: 13.sp,
-                        width: 37.w,
+                        textSize: 12.sp,
+                        width: 40.w,
                         height: 6.h,
                         isUpperCase: false,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20.0, right: 10.0, top: 10.0, bottom: 10.0),
+                      padding: const EdgeInsets.all(10),
                       child:  ButtonTheme(
                         height: 35.0,
                         minWidth: 110.0,

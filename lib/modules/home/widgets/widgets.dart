@@ -17,8 +17,8 @@ Widget serviceItem(BuildContext context, {
       children: [
         Image(
           image:AssetImage("assets/images/$assetsImageCat.png"),
-          fit: BoxFit.none,
-          height: 10.h,
+          fit: BoxFit.fitWidth,
+          height: 7.h,
         ),
         Container(
           width: 37.w,
@@ -68,7 +68,6 @@ Container buildCarouselSliderItem({
   required Color color,
   required Color buttonColor,
   required Color buttonTextColor,
-  Color? textColor,
   required String imageName,
   required String textHeader,
   required String textBody,
@@ -77,6 +76,7 @@ Container buildCarouselSliderItem({
   return Container(
     height: 22.h,
     padding: EdgeInsetsDirectional.fromSTEB(4.w, 2.h, 0, 0),
+    margin: EdgeInsets.symmetric(horizontal: 1.w),
     decoration: BoxDecoration(
       color: color,
       borderRadius: BorderRadius.circular(30),
@@ -91,7 +91,7 @@ Container buildCarouselSliderItem({
               buildTextHeader(
                 text: textHeader,
                 fontSize: 16.sp,
-                color: textColor,
+                color: Colors.white,
               ),
               verticalSpace(.5),
               buildTextBody(
@@ -99,20 +99,22 @@ Container buildCarouselSliderItem({
                 fontSize: 11.sp,
                 maxLines: 3,
                 isOverflew: true,
-                color: textColor ?? Colors.white,
+                color: Colors.white,
                 isCenter: false,
               ),
-              verticalSpace(.8),
-              defaultButton(
-                function: onTap,
-                textData: 'Show Details',
-                height: 5.h,
-                width: 37.w,
-                backgroundButton: buttonColor,
-                isUpperCase: false,
-                radius: 16,
-                textSize: 12.sp,
-                buttonTextColor: buttonTextColor,
+              verticalSpace(1),
+              FittedBox(
+                child: defaultButton(
+                  function: onTap,
+                  textData: 'Show Details',
+                  height: 5.h,
+                  width: 50.w,
+                  backgroundButton: buttonColor,
+                  isUpperCase: false,
+                  radius: 16,
+                  textSize: 12.sp,
+                  buttonTextColor: buttonTextColor,
+                ),
               ),
             ],
           ),

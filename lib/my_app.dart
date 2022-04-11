@@ -2,7 +2,6 @@
 import 'package:brilliant/shared/styles/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:sizer/sizer.dart';
 
@@ -11,9 +10,8 @@ import 'layout/cubit/states.dart';
 import 'modules/splash/splash_view.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key,required this.isDark,required this.startWidget,/* required this.onBoarding*/}) : super(key: key);
+  const MyApp({Key? key,required this.isDark,required this.startWidget}) : super(key: key);
 
-  // final dynamic onBoarding;
   final Widget startWidget;
 
   final dynamic isDark;
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
         builder: (context,state){
           return Sizer(
               builder: (context, orientation, deviceType) {
-                return GetMaterialApp(
+                return MaterialApp(
                   debugShowCheckedModeBanner: false,
                   theme: lightTheme,
                   darkTheme: darkTheme,

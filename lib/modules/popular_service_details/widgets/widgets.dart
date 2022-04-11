@@ -21,21 +21,24 @@ Column buildContactWay({
         children: [
           Image(
             image: AssetImage("assets/icons/$imageWay.png"),
-            height: 5.h,
-            width: 10.w,
+            height: 4.h,
+            fit: BoxFit.fitWidth,
           ),
-          horizontalSpace(3.5),
-          buildTextBody(text: textWayValue,fontSize: 16.sp,),
+          const Spacer(),
+          buildTextBody(text: textWayValue,fontSize: 14.sp,),
           const Spacer(),
           SizedBox(
-            width: 35.w,
-            child: defaultButtonWithIcon(
-              onPressed: function,
-              labelText: labelName,
-              icon: iconWay,
-              textColor: Colors.white,
-              labelSize: 16.sp,
-              backgroundButton: backgroundButton,
+            width: 40.w,
+            child: Directionality(
+              textDirection: TextDirection.rtl,
+              child: defaultButtonWithIcon(
+                onPressed: function,
+                labelText: labelName,
+                icon: iconWay,
+                textColor: Colors.white,
+                labelSize: 16.sp,
+                backgroundButton: backgroundButton,
+              ),
             ),
           ),
 

@@ -78,7 +78,6 @@ Widget defaultButton({
 Widget defaultButtonWithIcon({
   double width = double.infinity,
   double? height,
-  // double radius = 5,
   double elevation = 5,
   Color? textColor ,
   double? labelSize ,
@@ -93,15 +92,15 @@ Widget defaultButtonWithIcon({
     width: width,
     child: ElevatedButton.icon(
       onPressed: onPressed,
-      icon: icon,
       label:  Text(isUpperCase ? labelText.tr().toUpperCase() : labelText.tr()),
+      icon: icon,
       style: ElevatedButton.styleFrom(
         primary: backgroundButton ?? kDefaultColor,
         onPrimary: textColor ?? kDefaultSecondColor,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
         ),
-        padding: const EdgeInsets.symmetric( horizontal: 5),
+        padding: EdgeInsets.symmetric(horizontal: 2.w),
         textStyle: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: labelSize ?? 20,
