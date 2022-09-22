@@ -37,7 +37,7 @@ void main() async{
       widget = const OnBoardingView();
     }
   } else{
-    widget = const SplashView();
+    widget = const OnBoardingView();
   }
 
   runApp(
